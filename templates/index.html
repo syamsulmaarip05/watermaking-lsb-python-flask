@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Watermarking App</title>
+</head>
+<body>
+    <div class="judul">
+        <div class="logo">
+            <img class="logo-img" src="{{ url_for('static', filename='Watermarking.png') }}" />
+        </div>
+        <div class="row">
+            <form action="/">
+                <button type="submit" class="btn" value="Submit">Watermark</button>
+            </form>
+            <form action="/index2">
+                <button type="submit" class="btn" value="Submit">Detect</button>
+            </form>
+        </div>
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="watermak">
+                <div class="decode">
+                    <div class="wrapper">
+                        <h1>UPLOAD GAMBAR</h1>
+                        <div class="upload-box">
+                            <input type="file" name="original_image" class="form-control" autocomplete="off" id="original-image-upload" required onchange="previewImage(this, 'original-image-preview')" />
+                            <label for="original-image-upload" class="upload-button">Upload</label>
+                            <div id="original-image-preview"></div>
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <h1>UPLOAD WATERMAK</h1>
+                        <div class="upload-box">
+                            <input type="file" name="watermark_image" class="form-control" autocomplete="off" id="watermark-image-upload" required onchange="previewImage(this, 'watermark-image-preview')" />
+                            <label for="watermark-image-upload" class="upload-button">Upload</label>
+                            <div id="watermark-image-preview"></div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn" value="Submit">WATERMAKING</button>
+            </div>
+        </form>
+    </div>
+    <div class="watermak2">
+        <div class="wrapper">
+            <h1>HASIL WATERMAKING</h1>
+            <div class="upload-box">
+                {% if filename %}
+                    <img src="{{ url_for('static', filename='uploads/' + filename) }}" alt="Watermarked Image" style="max-width: 300px; max-height: 300px;" />
+                {% endif %}
+            </div>
+            <div class="download-btn-wrapper">
+                {% if filename %}
+                    <form action="{{ url_for('download_file', filename=filename) }}" method="get">
+                        <button type="submit" class="btn">Download Gambar</button>
+                    </form>
+                {% endif %}
+                {% if not filename %}
+                    <button class="btn" disabled aria-disabled="true">Download Gambar</button>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <script>
+        function previewImage(input, previewId) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                document.getElementById(previewId).innerHTML = '<img src="' + e.target.result + '" alt="Image Preview" style="max-width: 300px; max-height: 150px;" />';
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    </script>
+</body>
+</html>

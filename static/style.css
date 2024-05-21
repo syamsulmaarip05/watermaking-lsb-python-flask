@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=arial:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+}
+
+.judul{
+    text-align: center;
+}
+
+.logo{
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    box-shadow: 0 0 10px rgb(87, 67, 67);
+}
+
+.logo-img {
+    width: 300px; 
+    height: auto; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+}
+
+.row .btn {
+    width: 100px;
+    height: 40px;
+    background: #F0630D;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 6ee;
+}
+
+.watermak {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.watermak2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.decode {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 10px; 
+}
+
+.wrapper {
+    justify-content: center;
+    width: 400px;
+    max-height: 450px;
+    background-color: aliceblue;
+    border: 2px solid #F0630D;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: black;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+.wrapper h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+.decode .wrapper h1 {
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid #F0630D;
+    border-radius: 40px;
+    font-size: 16px;
+    color: black;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #F0630D;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.watermak .btn {
+    width: 150px;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    background-color: #F0630D;
+}
+
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 1px dashed black;
+    padding: 10px; 
+    height: 200px;
+    max-width: 100%;
+    max-height: 300px;
+    margin-bottom: 10px;
+}
+
+.upload-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 1;
+}
+
+#image-upload {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#original-image-preview {
+    margin: 10px;
+    position: relative;
+    z-index: 999;
+}
+
+#watermark-image-preview {
+    margin: 10px;
+    position: relative;
+    z-index: 999;
+}
+
+.decode .wrapper .upload-box {
+    padding-bottom: 10px;
+}
+
+.copyr {
+    margin-top: 20px;
+    font-size: 8px;
+    color: rgb(80, 80, 80);
+}
+
+.watermak2 .btn {
+    width: 150px;
+    height: 45px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    background-color: #F0630D;
+}
+
+.watermak2 .download-btn-wrapper {
+    text-align: center; 
+    margin-top: 10px; 
+}
